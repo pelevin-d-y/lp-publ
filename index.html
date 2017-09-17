@@ -7,19 +7,25 @@
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.0/slick/slick.css">
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.0/slick/slick-theme.css">
   <link rel="stylesheet" href="stylesheets/app.css">
+  <script src="javascripts/vendor.js"></script>
+  <script src="javascripts/app.js"></script>
+  <script>require('initialize');</script>
 </head>
 <body>
   <header class="header">
     <div class="container"><a href="#" class="header-logo">Code story</a>
-      <div class="main-nav"><a href="#scroll-main" class="main-nav__item">Main</a><a href="#scroll-about" class="main-nav__item">About</a><a href="#scroll-services" class="main-nav__item">Services</a><a href="#scroll-clients" class="main-nav__item">Clients</a><a href="#scroll-contact" class="main-nav__item">Contact</a></div>
+      <div class="main-nav">
+        <div class="main-nav__close"></div><a href="#scroll-main" class="main-nav__item">Main</a><a href="#scroll-about" class="main-nav__item">About</a><a href="#scroll-services" class="main-nav__item">Services</a><a href="#scroll-portfolio" class="main-nav__item">Portfolio</a><a href="#scroll-clients" class="main-nav__item">Clients</a><a href="#scroll-contact" class="main-nav__item">Contact</a>
+      </div>
       <div class="header__tel"><a href="tel: 8 800 800 800">8 800 800 800</a></div>
+      <div class="menu-btn"></div>
     </div>
   </header>
-  <div nmae="scroll-main" id="scroll-main" class="top-block">
+  <div name="scroll-main" id="scroll-main" class="top-block">
     <div class="container top-block__container">
       <div class="top-block__text-wrapper">
         <h1 class="top-block__title">DESIGN AND WEB DEVELOPMENT STUDIO</h1>
-        <div class="top-block__descr">The websites made by us are a step ahead of time.<br>We develop the high load ngines and services and increase your online sales.</div><a href="#" class="top-block__btn btn hvr-radial-out">Order Now</a>
+        <div class="top-block__descr">The websites made by us are a step ahead of time.<br>We develop the high load ngines and services and increase your online sales.</div><a href="#" class="top-block__btn btn hvr-sweep-to-right">Order Now</a>
         <div class="top-block__container-animate"></div>
       </div>
     </div>
@@ -81,29 +87,31 @@
             <div class="services__item-text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
           </div>
         </div>
-      </div><a href="#" class="services__btn btn hvr-radial-out">Start</a>
+      </div><a href="#" class="services__btn btn hvr-sweep-to-right">Start</a>
       <div class="services__ants"></div>
       <div class="services__triangle"></div>
     </div>
     <div class="services__wave"></div>
     <div class="services__bottom-triangle"></div>
   </div>
-  <div class="portfolio">
+  <div id="scroll-portfolio" class="portfolio">
     <div class="portfolio__container">
       <h1 class="portfolio__title">Portfolio</h1>
       <div class="portfolio__items"><a href="#" class="portfolio__item portfolio__item-1">
-          <div class="portfolio__item-border"></div></a><a href="#" class="portfolio__item portfolio__item-2">
+          <div class="portfolio__item-border"></div></a>
+        <div class="portfolio__item portfolio__item-2">
           <div class="portfolio__item-border">
             <div class="portfolio__item-border-container">
               <div class="portfolio__item-title">lEVELS MALL</div>
-              <div class="portfolio__item-desk">It is a long established fact that a reader will be distracted by the readable content of a page</div>
-              <div class="portfolio__item-btn">See all</div>
+              <div class="portfolio__item-desk">It is a long established fact that a reader will be distracted by the readable content of a page</div><a href="#" class="portfolio__item-btn">See all</a>
             </div>
-          </div></a><a href="#" class="portfolio__item portfolio__item-3">
+          </div>
+        </div><a href="#" class="portfolio__item portfolio__item-3">
           <div class="portfolio__item-border"></div></a><a href="#" class="portfolio__item portfolio__item-4">
           <div class="portfolio__item-border">
             <div class="portfolio__item-logo"></div>
-          </div></a></div><a href="#" class="portfolio__btn btn hvr-radial-out">Order now</a>
+          </div></a>
+      </div><a href="#" class="portfolio__btn btn hvr-sweep-to-right">Order now</a>
       <div class="portfolio__wave"></div>
       <div class="portfolio__circle"></div>
       <div class="portfolio__square"></div>
@@ -145,7 +153,7 @@
           </div>
         </div>
       </div>
-      <div class="clients__slider-arrows"></div><a href="#" class="clients__btn btn hvr-radial-out">Order now</a>
+      <div class="clients__slider-arrows"></div><a href="#" class="clients__btn btn hvr-sweep-to-right">Order now</a>
     </div>
     <div class="clients__big-circle">
       <div class="clients__big-circle-container"></div>
@@ -174,7 +182,7 @@
             <div class="contacts__form-textarea-container">
               <textarea name="fotos__area" placeholder="Ваше сообщение" class="contacts__form-textarea"></textarea>
             </div>
-            <button type="submit" href="#" class="btn contacts__btn hvr-radial-out">Start</button>
+            <button type="submit" href="#" class="btn contacts__btn hvr-sweep-to-right">Start</button>
           </div>
         </form>
         <div class="contacts__copyright">© codestory 2017</div>
@@ -187,10 +195,10 @@
       <div class="contacts__triangle"></div>
     </div>
   </div>
-  <div class="popup hidden">
+  <div class="popup popup-thanks hidden">
     <div class="overlay">
       <div class="popup-container">
-        <div class="popup__btn hvr-radial-out">
+        <div class="popup__btn hvr-sweep-to-right">
           <div class="popup__btn-line-1"></div>
           <div class="popup__btn-line-2"></div>
         </div>
@@ -205,7 +213,54 @@
       </div>
     </div>
   </div>
+  <div class="popup popup-form hidden">
+    <div class="overlay">
+      <div class="popup__container-form-wrapper">
+        <div class="popup__btn hvr-sweep-to-right">
+          <div class="popup__btn-line-1"></div>
+          <div class="popup__btn-line-2"></div>
+        </div>
+        <div class="popup-container popup__container-form">
+          <div class="popup__title">Order</div>
+          <div class="popup__descr popup-form__descr">You can leave your contact information and we will contact you for details</div>
+          <form action="#" method="#" id="popup__form" class="contacts__form">
+            <div class="popup__form-container">
+              <div class="popup__form-input-container">
+                <input type="text" name="name" placeholder="Name" class="contacts__form-input">
+              </div>
+              <div class="popup__form-input-container">
+                <input type="tel" name="phone" placeholder="Phone" class="contacts__form-input">
+              </div>
+              <div class="popup__form-input-container">
+                <input type="email" name="email" placeholder="E-mail" class="contacts__form-input">
+              </div>
+              <div class="popup__form-textarea-container">
+                <textarea name="fotos__area" placeholder="Ваше сообщение" class="contacts__form-textarea"></textarea>
+              </div>
+              <button type="submit" href="#" class="btn contacts__btn hvr-sweep-to-right">Go</button>
+            </div>
+          </form>
+          <div class="popup-form-elements-wrapper">
+            <div class="popup-form-ants"></div>
+            <div class="popup-form-triangle"></div>
+            <div class="popup-form-square"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="popup popup-project hidden">
+    <div class="overlay">
+      <div class="popup-container popup-container-project">
+        <div class="popup__btn hvr-sweep-to-right">
+          <div class="popup__btn-line-1"></div>
+          <div class="popup__btn-line-2"></div>
+        </div>
+        <div class="popup__title popup__title-project">Pacific coast movers</div>
+        <div class="popup__descr popup-project-descr">Design, Web develop</div>
+        <div class="popup__project-img"><img src="images/project.jpg"></div>
+        <div class="popup__btn-container"><a href="#" class="project__btn btn hvr-sweep-to-right">Order now</a></div>
+      </div>
+    </div>
+  </div>
 </body>
-<script src="javascripts/vendor.js"></script>
-<script src="javascripts/app.js"></script>
-<script>require('initialize');</script>
