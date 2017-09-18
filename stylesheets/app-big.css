@@ -447,46 +447,31 @@ textarea {
 .hidden {
   display: none; }
 
-.hvr-radial-out {
+.hvr-border-fade {
   display: inline-block;
   vertical-align: middle;
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px transparent;
-  position: relative;
-  overflow: hidden;
-  background: #e1e1e1;
-  -webkit-transition-property: color;
-  transition-property: color;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s; }
-
-.hvr-radial-out:before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #8392cb;
-  border-radius: 100%;
-  -webkit-transform: scale(0);
-  transform: scale(0);
-  -webkit-transition-property: transform;
-  transition-property: transform;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out; }
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+  box-shadow: inset 0 0 0 2px #00dbce, 0 0 1px transparent;
+  /* Hack to improve aliasing on mobile/tablet devices */ }
 
-.hvr-radial-out:hover, .hvr-radial-out:focus, .hvr-radial-out:active {
-  color: #000; }
+.hvr-border-fade:hover, .hvr-border-fade:focus, .hvr-border-fade:active {
+  box-shadow: inset 0 0 0 2px #fca9ff, 0 0 1px transparent;
+  /* Hack to improve aliasing on mobile/tablet devices */ }
 
-.hvr-radial-out:hover:before, .hvr-radial-out:focus:before, .hvr-radial-out:active:before {
-  -webkit-transform: scale(2);
-  transform: scale(2); }
+.popup__btn.hvr-border-fade {
+  box-shadow: inset 0 0 0 2px #fca9ff, 0 0 1px transparent; }
 
+.hvr-border-fade:hover, .hvr-border-fade:focus, .hvr-border-fade:active {
+  box-shadow: inset 0 0 0 2px #fca9ff, 0 0 1px transparent;
+  /* Hack to improve aliasing on mobile/tablet devices */ }
+
+/* Sweep To Right */
 .hvr-sweep-to-right {
   display: inline-block;
   vertical-align: middle;
@@ -497,8 +482,7 @@ textarea {
   -webkit-transition-property: color;
   transition-property: color;
   -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  border-radius: 27.5px; }
+  transition-duration: 0.3s; }
 
 .hvr-sweep-to-right:before {
   content: "";
@@ -518,8 +502,7 @@ textarea {
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
   -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-  border-radius: 27.5px; }
+  transition-timing-function: ease-out; }
 
 .hvr-sweep-to-right:hover, .hvr-sweep-to-right:focus, .hvr-sweep-to-right:active {
   color: white; }
@@ -565,6 +548,33 @@ textarea {
   .container {
     padding-left: 12px;
     padding-right: 12px; } }
+
+@media (max-width: 600px) {
+  .portfolio__plus,
+  .portfolio__man,
+  .services__bottom-triangle,
+  .who-bottom-triangle,
+  .who__big-circle,
+  .who__wave,
+  .who__ants,
+  .top-block__triangle,
+  .top-block__circle,
+  .top-block__man,
+  .who-top-triangle,
+  .portfolio__square,
+  .clients__min-circle,
+  .clients-top-triangle,
+  .clients__wave,
+  .clients__triangle,
+  .contacts-top-triangle
+.clients__ants,
+  .clients__ants,
+  .contacts__plus,
+  .contacts-top-triangle,
+  .contacts__wave,
+  .contacts__ants,
+  .contacts__triangle {
+    display: none; } }
 
 .btn {
   display: inline-block;
@@ -727,7 +737,7 @@ textarea {
   bottom: 6vw;
   opacity: 0;
   animation-fill-mode: forwards;
-  animation-duration: 1.5s;
+  animation-duration: 1s;
   width: 46.1%;
   height: 40vw;
   background: url("../images/header-man.png") no-repeat center;
@@ -743,7 +753,7 @@ textarea {
   background-size: contain;
   opacity: 0;
   animation-fill-mode: forwards;
-  animation-duration: 1.5s; }
+  animation-duration: 0.5s; }
 
 .top-block__circle {
   position: absolute;
@@ -755,7 +765,7 @@ textarea {
   background-size: contain;
   opacity: 0;
   animation-fill-mode: forwards;
-  animation-duration: 1.5s; }
+  animation-duration: 0.5s; }
 
 .top-block__wave {
   position: absolute;
@@ -767,7 +777,7 @@ textarea {
   background-size: contain;
   opacity: 0;
   animation-fill-mode: forwards;
-  animation-duration: 1.5s; }
+  animation-duration: 0.5s; }
 
 .top-block__ants {
   position: absolute;
@@ -779,7 +789,7 @@ textarea {
   background-size: contain;
   opacity: 0;
   animation-fill-mode: forwards;
-  animation-duration: 1.5s; }
+  animation-duration: 0.5s; }
 
 @media (max-width: 1024px) {
   .top-block__wave {
@@ -792,6 +802,10 @@ textarea {
     font-size: 18px; }
   .top-block__ants {
     display: none; } }
+
+@media (max-width: 600px) {
+  .top-block__container {
+    padding-bottom: 30vw; } }
 
 .who {
   position: relative;
@@ -856,7 +870,7 @@ textarea {
   background: url("../images/who-plus.png") no-repeat center;
   background-size: contain;
   animation-fill-mode: forwards;
-  animation-duration: 1.5s;
+  animation-duration: 0.5s;
   opacity: 0; }
 
 .who__card-square {
@@ -868,7 +882,7 @@ textarea {
   background: url("../images/who-square.png") no-repeat center;
   background-size: contain;
   animation-fill-mode: forwards;
-  animation-duration: 1.5s;
+  animation-duration: 0.5s;
   opacity: 0; }
 
 .who-bottom-triangle {
@@ -891,7 +905,7 @@ textarea {
   background-size: contain;
   z-index: 11;
   animation-fill-mode: forwards;
-  animation-duration: 1.5s;
+  animation-duration: 0.5s;
   opacity: 0; }
 
 .who__big-circle {
@@ -904,7 +918,7 @@ textarea {
   background-size: contain;
   z-index: 10;
   animation-fill-mode: forwards;
-  animation-duration: 1.5s;
+  animation-duration: 0.5s;
   opacity: 0; }
 
 .who__triangle {
@@ -917,7 +931,7 @@ textarea {
   background-size: contain;
   z-index: 10;
   animation-fill-mode: forwards;
-  animation-duration: 1.5s;
+  animation-duration: 0.5s;
   opacity: 0; }
 
 .who__min-circle {
@@ -930,7 +944,7 @@ textarea {
   background-size: contain;
   z-index: 11;
   animation-fill-mode: forwards;
-  animation-duration: 1.5s;
+  animation-duration: 0.5s;
   opacity: 0; }
 
 .who__ants {
@@ -943,7 +957,7 @@ textarea {
   z-index: 11;
   overflow: hidden;
   animation-fill-mode: forwards;
-  animation-duration: 1.5s;
+  animation-duration: 0.5s;
   opacity: 0; }
 
 .who__ants-container {
@@ -955,7 +969,7 @@ textarea {
   background: url("../images/who-ants.png") no-repeat center;
   background-size: contain;
   animation-fill-mode: forwards;
-  animation-duration: 1.5s; }
+  animation-duration: 0.5s; }
 
 @media (max-width: 1446px) {
   .who__container {
@@ -982,10 +996,19 @@ textarea {
   .who__card {
     display: none; }
   .who__title {
-    margin-right: auto;
-    margin-left: auto;
-    text-align: center; }
+    text-align: left; }
   .who__desc-paragraph {
+    text-align: left; } }
+
+@media (max-width: 600px) {
+  .who {
+    padding-top: 0; }
+  .who__container {
+    padding-top: 60px;
+    padding-bottom: 60px; }
+  .who__title {
+    margin-left: auto;
+    margin-right: auto;
     text-align: center; } }
 
 .services {
@@ -1078,7 +1101,7 @@ textarea {
   background-size: contain;
   opacity: 0;
   animation-fill-mode: forwards;
-  animation-duration: 1.5s; }
+  animation-duration: 0.5s; }
 
 .services__triangle {
   position: absolute;
@@ -1090,7 +1113,7 @@ textarea {
   background-size: contain;
   opacity: 0;
   animation-fill-mode: forwards;
-  animation-duration: 1.5s; }
+  animation-duration: 0.5s; }
 
 .services__wave {
   z-index: 11;
@@ -1103,7 +1126,7 @@ textarea {
   background-size: contain;
   opacity: 0;
   animation-fill-mode: forwards;
-  animation-duration: 1.5s; }
+  animation-duration: 0.5s; }
 
 @media (max-width: 1024px) {
   .services__title {
@@ -1131,6 +1154,11 @@ textarea {
   .services__wave {
     display: none; } }
 
+@media (max-width: 600px) {
+  .services {
+    padding-top: 60px;
+    padding-bottom: 60px; } }
+
 .portfolio {
   position: relative;
   padding-top: 19vw;
@@ -1157,7 +1185,7 @@ textarea {
   height: 25.05208vw;
   padding: 0;
   margin-bottom: 1.04167vw;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   animation-fill-mode: forwards;
   opacity: 0;
   transition: 0.5s; }
@@ -1181,12 +1209,15 @@ textarea {
 .portfolio__item-2 {
   align-items: center;
   padding: 0;
+  background: url("../images/portfolio-item-3.png") no-repeat center;
+  background-size: contain;
   transition: border 0.5s; }
 
 .portfolio__item-2:hover {
   border: 20px solid transparent;
   border-image: linear-gradient(to bottom, #c1709d 0%, #9273aa 100%);
-  border-image-slice: 1; }
+  border-image-slice: 1;
+  background: none; }
 
 .portfolio__item-border {
   position: relative;
@@ -1240,7 +1271,7 @@ textarea {
   display: block;
   width: 128px;
   height: 42px;
-  padding-top: 4px;
+  padding-top: 6px;
   margin: 0 auto;
   margin-top: 54px;
   color: #fffefe;
@@ -1248,7 +1279,6 @@ textarea {
   line-height: 1.88;
   text-align: center;
   border-radius: 20.8px;
-  border: solid 2px #00dbce;
   transition: 0.5s;
   transform: scale(1.1);
   opacity: 0; }
@@ -1312,7 +1342,7 @@ textarea {
   background-size: contain;
   opacity: 0;
   animation-fill-mode: forwards;
-  animation-duration: 1s; }
+  animation-duration: 0.5s; }
 
 .portfolio__square {
   position: absolute;
@@ -1325,7 +1355,7 @@ textarea {
   z-index: 10;
   opacity: 0;
   animation-fill-mode: forwards;
-  animation-duration: 1s; }
+  animation-duration: 0.5s; }
 
 .portfolio__circle {
   position: absolute;
@@ -1380,6 +1410,18 @@ textarea {
   .portfolio__btn {
     margin-top: 40px;
     margin-left: 20px; } }
+
+@media (max-width: 768px) and (max-width: 600px) {
+  .portfolio {
+    padding-top: 60px;
+    padding-bottom: 60px; }
+  .portfolio__title {
+    margin-bottom: 0;
+    text-align: center; }
+  .portfolio__btn {
+    display: block;
+    margin-right: auto;
+    margin-left: auto; } }
 
 .clients {
   z-index: 20;
@@ -1458,7 +1500,7 @@ textarea {
   background-size: contain;
   opacity: 0;
   animation-fill-mode: forwards;
-  animation-duration: 1.5s; }
+  animation-duration: 0.5s; }
 
 .clients__wave {
   position: absolute;
@@ -1470,7 +1512,7 @@ textarea {
   background-size: contain;
   opacity: 0;
   animation-fill-mode: forwards;
-  animation-duration: 1.5s; }
+  animation-duration: 0.5s; }
 
 .clients__triangle {
   position: absolute;
@@ -1482,7 +1524,7 @@ textarea {
   background-size: contain;
   opacity: 0;
   animation-fill-mode: forwards;
-  animation-duration: 1.5s; }
+  animation-duration: 0.5s; }
 
 .clients__min-circle {
   z-index: 20;
@@ -1495,7 +1537,7 @@ textarea {
   background-size: contain;
   opacity: 0;
   animation-fill-mode: forwards;
-  animation-duration: 1.5s; }
+  animation-duration: 0.5s; }
 
 .clients__big-circle {
   z-index: 20;
@@ -1508,7 +1550,7 @@ textarea {
   transform: rotate(10.3deg);
   opacity: 0;
   animation-fill-mode: forwards;
-  animation-duration: 1.5s; }
+  animation-duration: 0.5s; }
 
 .clients__big-circle-container {
   position: absolute;
@@ -1615,6 +1657,18 @@ textarea {
   .clients-btn-next {
     right: 40px; } }
 
+@media (max-width: 600px) {
+  .clients {
+    padding-bottom: 60px; }
+  .clients__slider {
+    margin-top: 50px; }
+  .clients-btn-prev {
+    top: 350px; }
+  .clients-btn-next {
+    top: 350px; }
+  .clients__btn {
+    margin-top: 60px; } }
+
 .contacts {
   z-index: 30;
   position: relative;
@@ -1691,6 +1745,19 @@ textarea {
   border: none;
   cursor: pointer; }
 
+.contacts__form-input-container,
+.contacts__form-textarea-container {
+  position: relative; }
+
+.contacts__form-input-container label.error {
+  position: absolute;
+  top: -15px; }
+
+.contacts__form-textarea-container label.error {
+  position: absolute;
+  top: 6px;
+  left: 0; }
+
 .contacts__copyright {
   margin-top: 17.1875vw;
   padding-bottom: 2.60417vw;
@@ -1727,7 +1794,7 @@ textarea {
   background-size: contain;
   opacity: 0;
   animation-fill-mode: forwards;
-  animation-duration: 1.5s; }
+  animation-duration: 0.5s; }
 
 .contacts__wave {
   position: absolute;
@@ -1739,7 +1806,7 @@ textarea {
   background-size: contain;
   opacity: 0;
   animation-fill-mode: forwards;
-  animation-duration: 1.5s; }
+  animation-duration: 0.5s; }
 
 .contacts__triangle {
   position: absolute;
@@ -1751,7 +1818,7 @@ textarea {
   background-size: contain;
   opacity: 0;
   animation-fill-mode: forwards;
-  animation-duration: 1.5s; }
+  animation-duration: 0.5s; }
 
 .contacts__ants {
   position: absolute;
@@ -1763,7 +1830,7 @@ textarea {
   background-size: contain;
   opacity: 0;
   animation-fill-mode: forwards;
-  animation-duration: 1.5s; }
+  animation-duration: 0.5s; }
 
 .contacts__square {
   position: absolute;
@@ -1776,7 +1843,7 @@ textarea {
   z-index: 20;
   opacity: 0;
   animation-fill-mode: forwards;
-  animation-duration: 1.5s; }
+  animation-duration: 0.5s; }
 
 .error {
   border-color: #f24841; }
@@ -1790,6 +1857,10 @@ label#fotos__area-error {
 
 .valid {
   border-color: #52e16c; }
+
+@media (max-width: 1028px) {
+  .contacts__wave {
+    display: none; } }
 
 @media (max-width: 640px) {
   label.error {
@@ -1966,8 +2037,21 @@ label#fotos__area-error {
   width: 100%;
   margin-bottom: 14px; }
 
+.popup__form-input-container label.error {
+  position: absolute;
+  left: 0;
+  top: -13px; }
+
 .popup__form-input-container:last-child {
   margin-bottom: 0; }
+
+.popup__form-textarea-container {
+  position: relative; }
+
+.popup__form-textarea-container label.error {
+  position: absolute;
+  left: 0;
+  top: -13px; }
 
 .popup__form-textarea-container .contacts__form-textarea {
   height: 183px;
@@ -1993,6 +2077,9 @@ label#fotos__area-error {
   text-align: center; }
 
 .popup__form-input-container .valid {
+  border-color: #52e16c; }
+
+.popup__form-textarea-container .valid {
   border-color: #52e16c; }
 
 .popup__container-form .contacts__btn {
