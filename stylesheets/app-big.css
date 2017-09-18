@@ -586,8 +586,34 @@ textarea {
   font-size: 18px;
   padding-top: 17px;
   border-radius: 27.5px;
-  background-color: #00dbce;
+  background-color: none;
   overflow: hidden; }
+
+.project__btn {
+  display: inline-block;
+  width: 196px;
+  height: 55px;
+  margin-top: 66px;
+  text-align: center;
+  color: #000;
+  font-size: 18px;
+  padding-top: 17px;
+  border-radius: 27.5px;
+  background-color: none;
+  overflow: hidden; }
+
+.top-block__btn {
+  color: #fff; }
+
+.portfolio__btn {
+  color: #fff; }
+
+.contacts__btn {
+  color: #fff;
+  background: none; }
+
+.popup-form__btn {
+  color: #000; }
 
 .header {
   min-height: 64px;
@@ -1194,30 +1220,23 @@ textarea {
   padding: 1.19792vw; }
 
 .portfolio__item-border {
-  border-width: 1px;
-  border-style: solid;
-  border-color: rgba(255, 255, 255, 0);
   transition: border-color 0.5s; }
 
 .portfolio__item:hover .portfolio__item-border {
-  border-color: white; }
+  border-color: white;
+  background-color: #191919; }
 
 .portfolio__item-1 {
   background: url(../images/portfolio-item-1.png) no-repeat center;
-  background-size: 110%; }
+  background-size: 100%; }
 
 .portfolio__item-2 {
   align-items: center;
   padding: 0;
   background: url("../images/portfolio-item-3.png") no-repeat center;
-  background-size: contain;
-  transition: border 0.5s; }
-
-.portfolio__item-2:hover {
-  border: 20px solid transparent;
-  border-image: linear-gradient(to bottom, #c1709d 0%, #9273aa 100%);
-  border-image-slice: 1;
-  background: none; }
+  background-size: 110%;
+  background-position: center;
+  transition: 0.5s; }
 
 .portfolio__item-border {
   position: relative;
@@ -1246,7 +1265,7 @@ textarea {
   transform: scale(1.1);
   transition: 0.5s; }
 
-.portfolio__item-2:hover .portfolio__item-title {
+.portfolio__item:hover .portfolio__item-title {
   transform: scale(1);
   opacity: 1; }
 
@@ -1263,7 +1282,7 @@ textarea {
   transform: scale(1.1);
   transition: 0.5s; }
 
-.portfolio__item-2:hover .portfolio__item-desk {
+.portfolio__item:hover .portfolio__item-desk {
   transform: scale(1);
   opacity: 1; }
 
@@ -1283,29 +1302,18 @@ textarea {
   transform: scale(1.1);
   opacity: 0; }
 
-.portfolio__item-2:hover .portfolio__item-btn {
+.portfolio__item:hover .portfolio__item-btn {
   transform: scale(1);
   opacity: 1; }
 
 .portfolio__item-3 {
   background: url(../images/portfolio-item-2.png) no-repeat center;
-  background-size: 110%; }
+  background-size: 100%; }
 
 .portfolio__item-4 {
   position: relative;
   background: url(../images/portfolio-item-4.png) no-repeat center;
-  background-size: 110%; }
-  .portfolio__item-4::after {
-    content: '';
-    position: absolute;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    display: block;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to top left, #d4e28e, #2d868c);
-    opacity: 0.8; }
+  background-size: 100%; }
 
 .portfolio__item-logo {
   position: relative;
@@ -1994,6 +2002,9 @@ label#fotos__area-error {
   background: #fca9ff;
   overflow: hidden; }
 
+.project__btn {
+  margin-top: 60px; }
+
 .popup__btn-line-1,
 .popup__btn-line-2 {
   position: absolute;
@@ -2138,17 +2149,20 @@ label#fotos__area-error {
   text-align: center; }
 
 .popup-container-project {
-  position: fixed;
-  top: 50%;
+  z-index: 500;
+  position: absolute;
   left: 50%;
-  transform: translate(-50%, -50%);
+  top: 40px;
+  transform: translateX(-50%);
+  min-height: 7356px;
   max-width: 1146px;
   width: 100%;
-  padding-bottom: 70px;
+  margin-bottom: 20px;
+  padding-bottom: 90px;
   background: #fff; }
 
 .popup__project-img {
-  height: 500px;
+  height: 7015px;
   overflow: auto; }
 
 .popup__project-img img {
@@ -2156,7 +2170,7 @@ label#fotos__area-error {
   margin: 0 auto; }
 
 .popup-project-descr {
-  margin-bottom: 40px; }
+  margin-bottom: 30px; }
 
 @media (max-width: 1480px) {
   .popup-container {
@@ -2164,8 +2178,7 @@ label#fotos__area-error {
     min-height: 671px; }
   .popup-container-project {
     max-width: 1146px;
-    width: 100%;
-    height: 700px; }
+    width: 100%; }
   .popup__container-form {
     min-height: 600px; }
   .popup__container-form-wrapper {
@@ -2196,14 +2209,13 @@ label#fotos__area-error {
   .popup-container-project {
     max-width: 1146px;
     width: 100%;
-    height: 610px; }
+    height: auto;
+    min-height: auto; }
   .popup__title-project {
     margin-top: 30px; }
   .popup-project-descr {
     margin-top: 10px;
     margin-bottom: 15px; }
-  .popup__project-img {
-    height: 350px; }
   .popup__man {
     width: 304px;
     height: 315px; }
@@ -2229,36 +2241,36 @@ label#fotos__area-error {
 
 @media (max-width: 1172px) {
   .popup-container-project {
-    width: 92vw;
-    height: 90vh;
-    min-height: auto; }
+    width: 92vw; }
   .popup-container-project {
     padding-left: 12px;
     padding-right: 12px; }
-  .popup__project-img {
-    height: 44vh; }
   .project__btn {
-    margin-top: 40px; } }
+    margin-top: 60px; } }
 
 @media (max-width: 900px) {
   .popup__project-img img {
-    width: 800px; } }
+    width: 800px; }
+  .popup__project-img {
+    min-height: auto;
+    height: auto; }
+  .popup-container-project {
+    height: auto;
+    min-height: auto;
+    padding-left: 12px;
+    padding-right: 12px; } }
 
 @media (max-width: 640px) {
   .popup-form .contacts__form-input {
     margin-bottom: 0; } }
 
 @media (max-width: 550px) {
-  .popup-container {
-    max-width: 280px;
-    min-height: 320px; }
   .popup__container-form-wrapper {
     max-width: 280px;
     min-height: 320px; }
   .popup-container-project {
     max-width: 90vw;
-    width: 90vw;
-    height: 90vh; }
+    width: 90vw; }
   .popup__container-form {
     padding-left: 12px;
     padding-right: 12px; }
